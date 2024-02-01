@@ -18,6 +18,20 @@ function App() {
             <div className="py-10" dangerouslySetInnerHTML={{ __html: Components }}></div>
 
             <div className="py-10 text-3xl">
+                XFlow is a <b>Unified System</b>
+            </div>
+
+            <div className="p-4 text-xl text-bold">
+                <div className="py-4">
+                    Instead of the traditional application stack that may use SQL, Java and Javascript
+                    with an ORM and an API between the languages, XFlow eliminates the complexity 
+                    caused by all of these disparate techonologies interfacing with each other by
+                    configuring everything in a single place with a single language.
+                </div>
+            </div>
+            
+
+            <div className="py-10 text-3xl">
                 The XFlow Database is <b>Push Based</b>
             </div>
             <div className="p-4 text-2xl text-bold">
