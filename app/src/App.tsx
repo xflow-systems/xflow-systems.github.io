@@ -12,7 +12,7 @@ function App() {
             </div>
 
             <div className="px-10">
-                <div className="py-4">XFlow is a <b>Database</b> combined with a <b>Fullstack Framework</b></div>
+                <div className="py-4">XFlow is a <b>Language</b> and a <b>Database</b> combined with a <b>Fullstack Framework</b></div>
             </div>
 
             <div className="py-10" dangerouslySetInnerHTML={{ __html: Components }}></div>
