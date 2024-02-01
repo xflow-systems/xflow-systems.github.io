@@ -95,7 +95,7 @@ function App() {
                 <div className="py-4">
                     Liveviews are inspired by the Phoenix framework.
                     Templates are rendered on the server but always only a minimal diff is sent to the client.
-                    No page reload is needed.
+                    No page reload is needed when changing some elements.
                 </div>
             </div>
 
