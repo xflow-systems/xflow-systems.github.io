@@ -83,6 +83,43 @@ function App() {
                     Over Materialize - A single unified subscription. No need for an ORM, API and frontend state managment logic.
                 </li>
             </div>
+
+            <div className="py-10 text-3xl">
+                XFlow uses <b>Liveviews for Rendering</b>
+            </div>
+
+            <div className="p-4 text-2xl text-bold">
+                What are Liveviews?
+            </div>
+            <div className="p-4 text-xl text-bold">
+                <div className="py-4">
+                    Liveviews are inspired by the Phoenix framework.
+                    Templates are rendered on the server but always only a minimal diff is sent to the client.
+                    No page reload is needed.
+                </div>
+            </div>
+
+            <div className="p-4 text-2xl text-bold">
+                Advantages over traditional backend rendered apps
+            </div>
+            <div className="p-4 text-xl list-disc">
+                <li className="py-4">
+                    No page reload is needed.
+                </li>
+            </div>
+
+            <div className="p-4 text-2xl text-bold">
+                Advantages over modern SPA frontend rendered apps
+            </div>
+            <div className="p-4 text-xl list-disc">
+                <li className="py-4">
+                    No API is needed.
+                </li>
+
+                <li className="py-4">
+                    No separate frontend state management library is needed
+                </li>
+            </div>
         </div>
     </div >
 }
