@@ -25,15 +25,26 @@ function App() {
             </div>
             <div className="p-4 text-xl text-bold">
                 <div className="py-4">
-                    Traditional pull based databases work with one-off queries. They send a a query, they get a result.
-                    If something might have changed, they need to know when to send another query.
+                    Traditional pull based databases work with one-off queries. You send a one-off query, you get a result.
+                    If something might have changed, you need to know when to send another query.
                 </div>
                 <div className="py-4">
-                    Pull based databases don't need to guess if something has changed. They subscribe to a query and continously
+                    Pull based databases don't need guessing if something has changed. You subscribe to a query and continously
                     get results as changes occur.
                 </div>
+            </div>
 
+            <div className="p-4 text-2xl text-bold">
+                Advantages of a Push based System
+            </div>
 
+            <div className="p-4 text-xl list-disc">
+                <li className="py-4">
+                    Simpler business logic. We don't need to guess when to reload potentially stale data.
+                </li>
+                <li className="py-4">
+                    Apps are realtime by default. Things like chat apps are trivial to implement.
+                </li>
             </div>
         </div>
     </div >
