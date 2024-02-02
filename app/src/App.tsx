@@ -43,7 +43,7 @@ function App() {
                     If something might have changed, you need to know when to send another query.
                 </div>
                 <div className="py-4">
-                    Pull based databases don't need guessing if something has changed. You subscribe to a query and continously
+                    Push based databases don't need guessing if something has changed. You subscribe to a query and continously
                     get results as changes occur.
                 </div>
             </div>
