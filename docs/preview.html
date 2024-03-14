@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>XFlow Example</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="flex">
+        <div class="basis-1/2 flex flex-col">
+            <div class="basis-3/4" id="react-root"></div>
+            <pre class="basis-1/4 bg-red-300 p-8" id="error-container"></pre>
+        </div>
+        
+        <div class="bg-zinc-300 h-screen basis-1/2 h-full flex items-stretch p-4">
+            <textarea id="source-code" spellcheck="false" class="font-mono w-full resize-none p-4">
+            </textarea>
+        </div>
+    </div>
+	<script type="module" src="js/index.js"></script>
+  </body>
+</html>
