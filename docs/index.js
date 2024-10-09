@@ -25,6 +25,15 @@ const App = async () => html`
             <source src="podcast/podcast0.wav" type="audio/wav" />
             Your browser does not support the audio element.
         </audio>
+        
+        <div style="font-size: 1.6em; margin: 2em 0">What is XFlow?</div>
+
+        <div>
+            XFlow is a fullstack programming language: a database, backend and frontend are all defined in <b>.xfl</b> files.
+        </div>
+        <div style="margin: 1em 0">
+            <a href="/live-code/preview.html">Check out an example</a>
+        </div>
     </div>
 </div>
 `;
