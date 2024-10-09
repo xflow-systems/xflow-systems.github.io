@@ -1,25 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
-.main-container {
-    max-width: 800px;
-    margin: 0 auto;
+body {
+    padding: 0;
+    margin: 0;
 
     font-family: "Roboto Mono", monospace;
     font-optical-sizing: auto;
     font-weight: <weight>;
     font-style: normal;
-}
-
-.source-line {
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    height: 1.3em;
-    padding: 0.4em;
-}
-
-.source-line:nth-child(odd) {
-    background: #f4f4f4;
 }
