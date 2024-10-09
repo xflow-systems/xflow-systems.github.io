@@ -18,7 +18,13 @@ const App = async () => html`
             </div>
         </div>
     </div>
-    <div style="max-width: 800px; margin: 0 auto;">
+    <div style="max-width: 800px; margin: 0 auto; padding: 1em">
+        <div style="font-size: 1.6em; margin: 2em 0">Why XFlow?</div>
+
+        <audio controls style="width: 100%">
+            <source src="podcast/podcast0.wav" type="audio/wav" />
+            Your browser does not support the audio element.
+        </audio>
     </div>
 </div>
 `;
