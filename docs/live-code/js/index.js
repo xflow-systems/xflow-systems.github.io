@@ -83,7 +83,8 @@ async function init() {
             loadSourceCode(srcPtr, srcLen) {
                 setTimeout(() => {
                     const src = getStr(srcPtr, srcLen);
-                    document.getElementById("source-code").value = src;
+                    // document.getElementById("source-code").value = src;
+                    window.editor.setValue(src);
                 });
             },
             showError(errPtr, errLen) {

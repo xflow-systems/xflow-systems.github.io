@@ -19,17 +19,44 @@
             </div>
         </div>
     </div>
-    <div class="flex" style="flex-grow: 1">
-        <div class="basis-1/2 flex flex-col">
-            <div class="basis-3/4" id="react-root"></div>
-            <pre class="basis-1/4 bg-red-300 p-8" id="error-container"></pre>
+
+    <div class="flex flex-col items-stretch h-full">
+        <div class="basis-4/5 flex flex-row grow">
+            <div class="basis-2/5" id="react-root"></div>
+            
+            <div class="basis-3/5 bg-zinc-300 h-full flex items-stretch">
+
+                <div id="source-code" class="font-mono w-full resize-none p-4" style="font-size: 1em"></div>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.36.2/ace.js" integrity="sha512-yjhIcftV1KZyd3rLPujicRV6NpFEuCqQaOBBdrey6vFdU1zVkJYgJf9a+15YrOuzzSXYNV2GU4xdQ8Xy9Zj/fA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                
+                <script>
+                    var editor = ace.edit("source-code");
+                    editor.session.setOption("useWorker", false); 
+                    // editor.setTheme("ace/theme/monokai");
+                    editor.session.setMode("ace/mode/html");
+                    
+                    window.editor = editor;
+                </script>
+            </div>
         </div>
-        
-        <div class="bg-zinc-300 basis-1/2 h-full flex items-stretch p-4">
-            <textarea id="source-code" spellcheck="false" class="font-mono w-full resize-none p-4">
-            </textarea>
+
+        <pre class="basis-1/5 bg-red-300 p-8" id="error-container"></pre>
+    </div>
+    <!-- 
+    
+    <div class="flex" style="flex-grow: 1">
+        <div class=" flex flex-row">
+            <div class="" id="react-root"></div>
+            <div class="bg-zinc-300  h-full flex items-stretch p-2">
+            </div>
+        </div>
         </div>
     </div>
+
+    -->
+
+    
 	<script type="module" src="js/index.js"></script>
+	
   </body>
 </html>
