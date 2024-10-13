@@ -34,12 +34,51 @@ const App = async () => html`
         <div style="margin: 1em 0">
             <a href="/live-code/preview.html">Check out an example</a>
         </div>
+        
+        <div style="font-size: 1.6em; margin: 2em 0">News</div>
+        
+        <div style="font-size: 1.2em; margin: 2em 0"><b>13/10/24</b> Aggregations Work</div>
+
+        <div id="news-aggregations" style="height: 400px"></div>
     </div>
 </div>
 `;
 
 async function bootstrap() {
     render(await App(), document.querySelector("#root"));
+
+
+    setTimeout(() => {
+        var editor = ace.edit("news-aggregations");
+        window.editor = editor;
+        editor.session.setOption("useWorker", false);
+        // editor.setTheme("ace/theme/monokai");
+        editor.session.setMode("ace/mode/html");
+        editor.setValue(`
+Average(
+    session, sum: reduce(redSum, value, 0),
+    count: reduce(redCount, user_id, 0),
+    avg: sum / count
+) :- AverageInput(@session: Session, @user_id: Id, value: Int).
+
+query_test "Aggregations" {
+    
+    inputs {
+        AverageInput(0, 1, 10),
+        AverageInput(0, 2, 20),
+        AverageInput(0, 3, 0),
+        AverageInput(0, 4, 30),
+        AverageInput(1, 5, 2),
+    }
+
+    expected_outputs {
+        Average(0, 60, 4, 15),
+        Average(1, 2, 1, 2),
+    }
+}
+        
+    `.trim());
+    }, 300);
 }
 
 bootstrap();
