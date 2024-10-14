@@ -84,7 +84,7 @@ async function init() {
                 setTimeout(() => {
                     const src = getStr(srcPtr, srcLen);
                     // document.getElementById("source-code").value = src;
-                    window.editor.setValue(src);
+                    window.editor.setValue(src, true);
                 });
             },
             showError(errPtr, errLen) {

@@ -56,7 +56,8 @@ async function bootstrap() {
         editor.session.setMode("ace/mode/html");
         editor.setValue(`
 Average(
-    session, sum: reduce(redSum, value, 0),
+    session,
+    sum: reduce(redSum, value, 0),
     count: reduce(redCount, user_id, 0),
     avg: sum / count
 ) :- AverageInput(@session: Session, @user_id: Id, value: Int).
@@ -77,7 +78,7 @@ query_test "Aggregations" {
     }
 }
         
-    `.trim());
+    `.trim(), true);
     }, 300);
 }
 
