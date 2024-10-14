@@ -37,7 +37,7 @@ const App = async () => html`
         
         <div style="font-size: 1.6em; margin: 2em 0">News</div>
         
-        <div style="font-size: 1.2em; margin: 2em 0"><b>13/10/24</b> Aggregations Work</div>
+        <div style="font-size: 1.2em; margin: 2em 0"><b>13/10/24</b> Aggregations</div>
 
         <div id="news-aggregations" style="height: 400px"></div>
     </div>
