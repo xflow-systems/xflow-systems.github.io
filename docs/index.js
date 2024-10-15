@@ -37,6 +37,10 @@ const App = async () => html`
         
         <div style="font-size: 1.6em; margin: 2em 0">News</div>
         
+        <div style="font-size: 1.2em; margin: 2em 0"><b>15/10/24</b> Sorting and Pagination</div>
+
+        <div id="page-and-sort" style="height: 400px"></div>
+        
         <div style="font-size: 1.2em; margin: 2em 0"><b>13/10/24</b> Aggregations</div>
 
         <div id="news-aggregations" style="height: 400px"></div>
@@ -49,12 +53,35 @@ async function bootstrap() {
 
 
     setTimeout(() => {
-        var editor = ace.edit("news-aggregations");
-        window.editor = editor;
-        editor.session.setOption("useWorker", false);
-        // editor.setTheme("ace/theme/monokai");
-        editor.session.setMode("ace/mode/html");
-        editor.setValue(`
+        let codeFields = {};
+
+        codeFields["page-and-sort"] = `
+PageAndSort(session) :- PageAndSortInput(@session: Session).
+
+query_test "Page and Sort" {
+
+    // field with index 0; not inverted
+    sort(0 false)
+
+    // page 0 with page size 3
+    page(1, 3)
+
+    inputs {
+        PageAndSortInput(0),
+        PageAndSortInput(2),
+        PageAndSortInput(1),
+        PageAndSortInput(3),
+        PageAndSortInput(4),
+    }
+
+    expected_outputs {
+        PageAndSort(3),
+        PageAndSort(4),
+    }
+}
+        `;
+        
+        codeFields["news-aggregations"] =  `
 Average(
     session,
     sum: reduce(redSum, value, 0),
@@ -77,8 +104,16 @@ query_test "Aggregations" {
         Average(1, 2, 1, 2),
     }
 }
+        `;
         
-    `.trim(), true);
+        for (let codeField in codeFields) {
+            var editor = ace.edit(codeField);
+            window.editor = editor;
+            editor.session.setOption("useWorker", false);
+            // editor.setTheme("ace/theme/monokai");
+            editor.session.setMode("ace/mode/html");
+            editor.setValue(codeFields[codeField].trim(), true);
+    }
     }, 300);
 }
 
