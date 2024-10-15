@@ -63,7 +63,7 @@ query_test "Page and Sort" {
     // field with index 0; not inverted
     sort(0 false)
 
-    // page 0 with page size 3
+    // page 1 with page size 3
     page(1, 3)
 
     inputs {
